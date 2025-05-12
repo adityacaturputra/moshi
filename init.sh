@@ -1,11 +1,9 @@
 git clone https://github.com/adityacaturputra/moshi.git
-python -m moshi_mlx.local -q 8   # weights quantized to 8 bits
+pip install -U moshi_mlx  # moshi MLX, from PyPI, best with Python 3.12.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 . "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
 apt update
-apt install pkg-config
-apt install libssl-dev
-apt install cmake
+apt install pkg-config libssl-dev cmake 
 pip install -U "huggingface_hub[cli]"
 huggingface-cli login
 cargo run --features cuda --bin moshi-backend -r -- --config moshi-backend/config.json standalone
