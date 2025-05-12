@@ -14,6 +14,7 @@ import { ModelParams } from "./components/ModelParams/ModelParams";
 import fixWebmDuration from "webm-duration-fix";
 import canvasLogo from "./canvas-logo.png";
 import { getMimeType, getExtension } from "./getMimeType";
+import { env } from "../../env";
 
 type ConversationProps = {
   workerAddr: string;
@@ -44,7 +45,7 @@ const buildURL = ({
   audioSeed: number;
 }) => {
   if (workerAddr == "same" || workerAddr == "") {
-    workerAddr = window.location.hostname + ":" + window.location.port;
+    workerAddr = env.VITE_HOSTNAME;
     console.log("Overriding workerAddr to", workerAddr);
   }
   const wsProtocol = (window.location.protocol === 'https:') ? 'wss' : 'ws';
