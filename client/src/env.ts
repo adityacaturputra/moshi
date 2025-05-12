@@ -6,7 +6,7 @@ type ENV = {
 
 const parseEnv = (): ENV => {
   const VITE_QUEUE_API_PATH = import.meta.env.VITE_QUEUE_API_PATH || "/api";
-  const VITE_HOSTNAME = import.meta.env.VITE_HOSTNAME || "ktfwx1fl0tgaxj-8998.proxy.runpod.net/ws";
+  const VITE_HOSTNAME = import.meta.env.VITE_HOSTNAME || "ktfwx1fl0tgaxj-8998.proxy.runpod.net";
   
   if (!VITE_QUEUE_API_PATH) {
     throw new Error("VITE_QUEUE_API_PATH is not defined");
